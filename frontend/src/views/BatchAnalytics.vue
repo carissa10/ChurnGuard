@@ -690,7 +690,7 @@ const uploadFile = async () => {
   formData.append('file', selectedFile.value)
   
   try {
-    const response = await axios.post('http://127.0.0.1:8000/api/predict_batch', formData, {
+    const response = await axios.post('https://churnguard-production-798a.up.railway.app/api/predict_batch', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

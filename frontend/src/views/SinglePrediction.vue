@@ -359,7 +359,7 @@ const handleSubmit = async () => {
   error.value = null
   
   try {
-    const response = await axios.post('http://127.0.0.1:8000/api/predict_single', form)
+    const response = await axios.post('https://churnguard-production-798a.up.railway.app/api/predict_single', form)
     if (response.data && response.data.status === 'success') {
       result.value = response.data.result
     } else {

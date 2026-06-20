@@ -445,7 +445,7 @@ const handleSubmit = async () => {
   error.value = null
   
   try {
-    const response = await axios.post('http://127.0.0.1:8000/api/nlp/predict_single', form)
+    const response = await axios.post('https://churnguard-production-798a.up.railway.app/api/nlp/predict_single', form)
     if (response.data && response.data.status === 'success') {
       const predictionResult = response.data.result
       result.value = predictionResult
@@ -653,7 +653,7 @@ const runBatchAnalysis = async () => {
     formData.append('file', csvFile.value)
     
     const response = await axios.post(
-      `http://127.0.0.1:8000/api/nlp/predict_batch?lang=${batchLang.value}`, 
+      `https://churnguard-production-798a.up.railway.app/api/nlp/predict_batch?lang=${batchLang.value}`, 
       formData,
       {
         headers: {
